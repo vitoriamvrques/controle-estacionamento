@@ -1,0 +1,5 @@
+# Programa compilado (gere com: gcc estacionamento.c -o estacionamento.exe)
+*.exe
+
+# Imagens para a apresentacao
+prints/

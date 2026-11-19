@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🅿️ Controle de Estacionamento</h1>
+        <p>Registre entradas e saídas e acompanhe as vagas em tempo real.</p>
+    </header>
+
+    <main>
+        <section class="indicadores">
+            <div class="card">
+                <span class="rotulo">Total de vagas</span>
+                <strong id="total">0</strong>
+            </div>
+            <div class="card verde">
+                <span class="rotulo">Livres</span>
+                <strong id="livres">0</strong>
+            </div>
+            <div class="card vermelho">
+                <span class="rotulo">Ocupadas</span>
+                <strong id="ocupadas">0</strong>
+            </div>
+            <div class="card">
+                <span class="rotulo">Ocupação</span>
+                <strong id="ocupacao">0%</strong>
+                <div class="barra"><div id="barraOcupacao"></div></div>
+            </div>
+        </section>
+
+        <div class="colunas">
+            <section class="painel">
+                <h2>🚗 Entrada</h2>
+                <form id="formEntrada">
+                    <label>Placa
+                        <input type="text" id="placa" maxlength="8" placeholder="ABC1D23" autocomplete="off" required>
+                    </label>
+                    <label>Modelo
+                        <input type="text" id="modelo" placeholder="Ex.: Gol" autocomplete="off" required>
+                    </label>
+                    <label>Cor
+                        <input type="text" id="cor" placeholder="Ex.: Prata" autocomplete="off" required>
+                    </label>
+                    <button type="submit">Registrar entrada</button>
+                </form>
+
+                <h2>🏁 Saída</h2>
+                <form id="formSaida">
+                    <label>Placa
+                        <input type="text" id="placaSaida" maxlength="8" placeholder="ABC1D23" autocomplete="off" required>
+                    </label>
+                    <button type="submit" class="secundario">Registrar saída</button>
+                </form>
+
+                <p id="mensagem" hidden></p>
+            </section>
+
+            <section class="painel">
+                <h2>🗺️ Mapa de vagas</h2>
+                <div id="mapa"></div>
+                <p class="legenda">
+                    <span class="quadrado livre"></span> Livre
+                    <span class="quadrado ocupada"></span> Ocupada
+                </p>
+                <div id="detalhe">Clique em uma vaga ocupada para ver o veículo.</div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
